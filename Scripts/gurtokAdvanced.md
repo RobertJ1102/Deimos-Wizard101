@@ -16,8 +16,7 @@ block tp_to_sigil_and_use {
             sendkey X, 0.1
             sendkey X, 0.1
             sendkey X, 0.1
-            sleep 3
-            mass waitforzonechange completion
+            sleep 13
 	    } else {
             print Sigil Failsafe Activated
             p1 tp XYZ(-36.59947204589844, 6191.037109375, 100.00009155273438)
@@ -25,8 +24,7 @@ block tp_to_sigil_and_use {
             sendkey X, 0.1
             sendkey X, 0.1
             sendkey X, 0.1
-            sleep 3
-            mass waitforzonechange completion
+            sleep 13
         }
     }
 }
@@ -40,10 +38,12 @@ block zone_changes_to_gurtok {
     # Zone changes to reach Gurtok
     sleep 2
     # Zone change 1
+    print Zone change 1
     p1 tp XYZ(3872.218017578125, 11489.134765625, -403.51519775390625)
     mass waitforzonechange completion
     sleep 1
     # Zone change 2
+    print Zone change 2
     p1 tp XYZ(-775.92822265625, -10539.5693359375, -2404.1728515625)
     mass waitforzonechange completion
     sleep 1
@@ -52,9 +52,11 @@ block zone_changes_to_gurtok {
 block use_elevator {
     # Teleport to elevator
     if inzone DragonSpire/DS_A3_Kings/DS_A3Z3_Volcano/DS_Volcano1 {
+        print Teleporting to elevator...
         p1 tp XYZ(-1374.6505126953125, 5575.81689453125, -5777.42236328125)
         sleep 2
         # Activate elevator
+        print Activating elevator...
         mass sendkey X, 0.1
         mass sendkey X, 0.1
         mass sendkey X, 0.1
@@ -104,9 +106,10 @@ block exit_dungeon {
     # Go to spawn
     print Teleporting to spawn
     p1 clickwindow ['WorldView', 'windowHUD', 'compassAndTeleporterButtons', 'GoHomeButton']
+    sleep 4
     while not inzone DragonSpire/DS_Hub_Cathedral {
         print still not at spawn
-        sleep 2
+        sleep 4
         p1 clickwindow ['WorldView', 'windowHUD', 'compassAndTeleporterButtons', 'GoHomeButton']
     }
     sleep 2

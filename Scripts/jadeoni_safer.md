@@ -13,7 +13,7 @@ while except p1 windowvisible ['WorldView', 'NPCRangeWin', 'imgBackground'] {
 sendkey X, 0.1
 }
 until not except p1 windowvisible ['WorldView', 'NPCServicesWin', 'ControlSprite', 'optionsLayout', 'NPCServicesOptionWindow', 'OptionButton'] {
-sleep 0.5
+sleep 2
 except p1 clickwindow ['WorldView', 'NPCServicesWin', 'ControlSprite', 'optionsLayout', 'NPCServicesOptionWindow', 'OptionButton']
 }
 }
@@ -31,7 +31,7 @@ except p1 clickwindow ['WorldView', 'NPCServicesWin', 'ControlSprite', 'optionsL
 # farming proccess
 
     until not except p1 windowvisible ['WorldView', 'windowHUD', 'wndElixirContainer', 'sprtElixir1'] {
-    	sleep 0.4
+    	sleep 1
 
 # location near obelisk
 
